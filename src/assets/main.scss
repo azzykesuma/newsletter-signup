@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&family=Saira:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/* primary */
+$tomato: hsl(4, 100%, 67%);
+/* base colors */
+$dark-slate-grey: hsl(234, 29%, 20%);
+$charcoal-grey: hsl(235, 18%, 26%);
+$grey: hsl(231, 7%, 60%);
+$white: hsl(0, 0%, 100%);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $charcoal-grey;
+}
+.top {
+  img {
+    width: 100%;
+  }
+}
+/* newsletter section */
+.bottom {
+  padding: 20px;
+
+  h1 {
+    margin-block: 20px;
+    color: $dark-slate-grey;
+    font-weight: 900;
+  }
+  .subHeader_text {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    margin-bottom: 30px;
+    li {
+      margin-bottom: 10px;
+
+      .listContainer {
+        display: flex;
+        gap: 15px;
+      }
+    }
+  }
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    label {
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    input {
+      padding: 15px;
+      border-radius: 5px;
+      border: 1px solid $grey;
+      ::placeholder {
+        color: $grey;
+      }
+    }
+
+    .errorText {
+      position: absolute;
+      right: 0;
+      color: $tomato;
+      font-size: 12px;
+      font-weight: 700;
+    }
+  }
+}
+.mainContainer {
+  display: block;
+  background-color: $white;
+  border-radius: 20px;
+}
+
+button {
+  margin-top: 20px;
+  background-color: $dark-slate-grey;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $tomato;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .mainContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px;
+  }
+  .bottom {
+    width: 45%;
+  }
+}
+
+// success popup
+.successContainer {
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  img {
+    width: 40px;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 1.1;
+    color: $dark-slate-grey;
+    margin-block: 20px;
+  }
+
+  .dismissBtn {
+    margin-top: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 400px;
+    height: unset;
+    border-radius: 20px;
+
+    .dismissBtn {
+      margin-top: 20px;
+    }
+  }
+}
